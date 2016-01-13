@@ -1,4 +1,4 @@
-	package org.usfirst.frc.team3617.robot;
+	package Drive;
 	import edu.wpi.first.wpilibj.IterativeRobot;
 	import edu.wpi.first.wpilibj.Joystick;
 	import edu.wpi.first.wpilibj.RobotDrive;
@@ -11,7 +11,7 @@
 	 * creating this project, you must also update the manifest file in the resource
 	 * directory.
 	 */
-	public class Robot extends IterativeRobot {
+	public class Robot2016 extends IterativeRobot {
 		RobotDrive myRobot;
 		Joystick stick;
 		int autoLoopCounter;
