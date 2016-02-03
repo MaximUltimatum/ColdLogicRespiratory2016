@@ -46,7 +46,12 @@
 				myRobot.drive(0.0, 0.0); 	// stop robot
 			}
 	    }
+	    
 	    //This class looks good - are we running this or the code Noah got off the internet somewhere?
+	    
+	    public void stopRobot(){
+	    	myRobot.drive(0.0, 0.0);
+	    }
 	    
 	    /**
 	     * This function is called once each time the robot enters tele-operated mode
