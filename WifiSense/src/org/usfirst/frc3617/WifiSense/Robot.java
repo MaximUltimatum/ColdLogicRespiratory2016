@@ -1,10 +1,9 @@
 package org.usfirst.frc3617.WifiSense;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.usfirst.frc3617.WifiSense.RobotMap;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -15,19 +14,15 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 	RobotDrive myRobot;
-	Joystick driveStick;
-	Joystick gunnerStick;
 	int autoLoopCounter;
-	Spark cow = new Spark(4);
+	
 	
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-    	myRobot = new RobotDrive(1,3,2,0);
-    	driveStick = new Joystick(0);
-    	gunnerStick = new Joystick(1);
+    	myRobot = new RobotDrive(RobotMap.frontRightMotor,RobotMap.rearRightMotor,RobotMap.rearLeftMotor,RobotMap.frontLeftMotor);
     }
     
     /**
@@ -60,8 +55,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(driveStick);
-        cow.set(gunnerStick.getY());
+        myRobot.arcadeDrive(RobotMap.driveStick);
+        RobotMap.cow.set(RobotMap.getGunnerY());
     }
     
     /**
