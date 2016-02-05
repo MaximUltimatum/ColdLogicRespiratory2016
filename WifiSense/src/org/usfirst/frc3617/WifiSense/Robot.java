@@ -58,7 +58,7 @@ public class Robot extends IterativeRobot {
         myRobot.arcadeDrive(RobotMap.driveStick);
         RobotMap.cow.set(RobotMap.getGunnerY());
     }
-    
+    //get hacked nurd
     /**
      * This function is called periodically during test mode
      */
