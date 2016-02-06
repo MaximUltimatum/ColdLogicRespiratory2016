@@ -33,11 +33,13 @@ public class RobotMap {
 	//Start the real stuff
 	static Joystick driveStick;
 	static Joystick gunnerStick;
-	static int frontRightMotor = 1,
-			frontLeftMotor = 0,
-			rearLeftMotor = 2,
-			rearRightMotor = 3,
-			cowMotor = 4;
+	static int frontRightMotor = 2,
+			frontLeftMotor = 3,
+			rearLeftMotor = 1,
+			rearRightMotor = 0,
+			cowMotor = 4,
+			towerRepell = 5, //temporary code for tower climb
+			towerClimber = 6;// temporary code for tower climb
 
 	
 	static Spark cow = new Spark(cowMotor);
