@@ -30,8 +30,7 @@ public class Robot extends IterativeRobot {
 
     	RobotMap.driveStick = new Joystick(0);
     	RobotMap.gunnerStick = new Joystick(1);
-    	myRobot = new RobotDrive(RobotMap.frontRightMotor,RobotMap.rearRightMotor,RobotMap.rearLeftMotor,RobotMap.frontLeftMotor);
-    	
+    	myRobot = new RobotDrive(RobotMap.frontLeftMotor,RobotMap.rearLeftMotor,RobotMap.frontRightMotor,RobotMap.rearRightMotor);
     }
     
     
@@ -66,7 +65,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(RobotMap.driveStick);
+        myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
         RobotMap.cow.set(RobotMap.gunnerStick.getY());
     }
     
