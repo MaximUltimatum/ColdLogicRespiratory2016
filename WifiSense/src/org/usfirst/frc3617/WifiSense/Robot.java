@@ -1,8 +1,10 @@
 package org.usfirst.frc3617.WifiSense;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 import org.usfirst.frc3617.WifiSense.RobotMap;
 
 /**
@@ -16,14 +18,32 @@ public class Robot extends IterativeRobot {
 	RobotDrive myRobot;
 	int autoLoopCounter;
 	
+    
+    //moved from RobotMap
+    public static Joystick driveStick;
+	public static Joystick gunnerStick;
+	static int frontRightMotor = 2,
+			frontLeftMotor = 3,
+			rearLeftMotor = 1,
+			rearRightMotor = 0,
+			cowMotor = 4,
+			towerRepell = 5, //temporary code for tower climb
+			towerClimber = 6;// temporary code for tower climb
+	
 	
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-    	myRobot = new RobotDrive(RobotMap.frontRightMotor,RobotMap.rearRightMotor,RobotMap.rearLeftMotor,RobotMap.frontLeftMotor);
+
+    	Robot.driveStick = new Joystick(0);
+    	Robot.gunnerStick = new Joystick(1);
+    	myRobot = new RobotDrive(frontRightMotor,rearRightMotor,rearLeftMotor,frontLeftMotor);
+    	
     }
+    
+    
     
     /**
      * This function is run once each time the robot enters autonomous mode
@@ -55,8 +75,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(RobotMap.driveStick);
-        RobotMap.cow.set(RobotMap.getGunnerY());
+        myRobot.arcadeDrive(driveStick);
+        RobotMap.cow.set(gunnerStick.getY());
     }
     
     /**
@@ -65,5 +85,5 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
     	LiveWindow.run();
     }
-    
+
 }
