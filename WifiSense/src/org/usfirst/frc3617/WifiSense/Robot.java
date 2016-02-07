@@ -20,15 +20,6 @@ public class Robot extends IterativeRobot {
 	
     
     //moved from RobotMap
-    public static Joystick driveStick;
-	public static Joystick gunnerStick;
-	static int frontRightMotor = 2,
-			frontLeftMotor = 3,
-			rearLeftMotor = 1,
-			rearRightMotor = 0,
-			cowMotor = 4,
-			towerRepell = 5, //temporary code for tower climb
-			towerClimber = 6;// temporary code for tower climb
 	
 	
     /**
@@ -37,9 +28,9 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 
-    	Robot.driveStick = new Joystick(0);
-    	Robot.gunnerStick = new Joystick(1);
-    	myRobot = new RobotDrive(frontRightMotor,rearRightMotor,rearLeftMotor,frontLeftMotor);
+    	RobotMap.driveStick = new Joystick(0);
+    	RobotMap.gunnerStick = new Joystick(1);
+    	myRobot = new RobotDrive(RobotMap.frontRightMotor,RobotMap.rearRightMotor,RobotMap.rearLeftMotor,RobotMap.frontLeftMotor);
     	
     }
     
@@ -75,8 +66,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(driveStick);
-        RobotMap.cow.set(gunnerStick.getY());
+        myRobot.arcadeDrive(RobotMap.driveStick);
+        RobotMap.cow.set(RobotMap.gunnerStick.getY());
     }
     
     /**
