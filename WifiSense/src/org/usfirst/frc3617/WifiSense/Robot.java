@@ -17,7 +17,7 @@ import org.usfirst.frc3617.WifiSense.RobotMap;
 public class Robot extends IterativeRobot {
 	RobotDrive myRobot;
 	int autoLoopCounter;
-	
+	boolean movingUp;
     
     //moved from RobotMap
 	
@@ -59,6 +59,7 @@ public class Robot extends IterativeRobot {
      * This function is called once each time the robot enters tele-operated mode
      */
     public void teleopInit(){
+    	movingUp = false;
     }
 
     /**
@@ -67,7 +68,20 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
         RobotMap.cow.set(RobotMap.gunnerStick.getY());
-    }
+     
+    	   if(RobotMap.gStickUp.get()){
+    		   RobotMap.upMotor.set(1);
+    		   movingUp = true;
+    	   }
+    	   else if(RobotMap.gRobotUp.get()){
+    		   RobotMap.upMotor.set(-1);
+    		   movingUp = true;
+    	   }
+    	   else if(RobotMap.upMotor.get() != 0){
+    		   RobotMap.upMotor.set(0);
+    		   }
+       }
+    
     
     /**
      * This function is called periodically during test mode
