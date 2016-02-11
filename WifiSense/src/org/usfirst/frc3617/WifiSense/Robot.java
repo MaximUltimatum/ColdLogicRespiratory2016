@@ -95,6 +95,25 @@ public class Robot extends IterativeRobot {
 		  }
     	}
     	//end mode 3
+    	//start mode 4
+    	if(autoMode == 4){
+    	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
+		{
+			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+			autoLoopCounter++;
+			}else if(autoLoopCounter > 100 && autoLoopCounter < 150){
+				myRobot.drive(-0.5, 1.0);
+				autoLoopCounter++;
+			}
+			else if(autoLoopCounter > 150 && autoLoopCounter < 200){
+				myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+				autoLoopCounter++;
+			}
+			else {
+			myRobot.drive(0.0, 0.0); 	// stop robot
+		  }
+    	}
+    	//end mode 4
     }
     
     /**
