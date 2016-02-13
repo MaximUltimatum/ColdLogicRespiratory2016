@@ -5,7 +5,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc3617.WifiSense.commands.Driver;
 import org.usfirst.frc3617.WifiSense.RobotMap;
+import org.usfirst.frc3617.WifiSense.commands.AutonomousCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,7 +23,8 @@ public class Robot extends IterativeRobot {
     public static int autoMode = 1;
     //moved from RobotMap
 	
-	
+	AutonomousCommand AutonomousCommand = new AutonomousCommand();
+	Driver Driver = new Driver();
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -46,6 +49,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    	AutonomousCommand.start();
     }
     /*
 	*/
@@ -55,6 +59,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopInit(){
     	movingUp = false;
+    	Driver.start();
     }
 
     /**
