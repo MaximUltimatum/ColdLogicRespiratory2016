@@ -17,7 +17,7 @@ import org.usfirst.frc3617.WifiSense.RobotMap;
 public class Robot extends IterativeRobot {
 	public static RobotDrive myRobot;
 	public static int autoLoopCounter;
-	boolean movingUp;
+	public static boolean movingUp;
     public static int autoMode = 1;
     //moved from RobotMap
 	

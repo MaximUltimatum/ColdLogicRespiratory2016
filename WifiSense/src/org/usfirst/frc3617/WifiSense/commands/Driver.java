@@ -5,6 +5,9 @@
  */
 package org.usfirst.frc3617.WifiSense.commands;
 
+import org.usfirst.frc3617.WifiSense.Robot;
+import org.usfirst.frc3617.WifiSense.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -23,7 +26,20 @@ public class Driver extends Command{
 	
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute(){
-		
+	    Robot.myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
+        RobotMap.cow.set(RobotMap.gunnerStick.getY());
+     
+    	   if(RobotMap.gStickUp.get()){
+    		   RobotMap.upMotor.set(1);
+    		   Robot.movingUp = true;
+    	   }
+    	   else if(RobotMap.gRobotUp.get()){
+    		   RobotMap.upMotor.set(-1);
+    		   Robot.movingUp = true;
+    	   }
+    	   else if(RobotMap.upMotor.get() != 0){
+    		   RobotMap.upMotor.set(0);
+    		   }		
 	}
 	
 	// Make this return true when this Command no longer needs to run execute()
@@ -33,10 +49,13 @@ public class Driver extends Command{
 	
 	// Called once after isFinished returns true
 	protected void end(){
+		Robot.myRobot.arcadeDrive(0,0);
+        RobotMap.cow.set(0);
 	}
 	
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted(){
+		end();
 	}
 }
