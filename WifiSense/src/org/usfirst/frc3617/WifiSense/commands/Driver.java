@@ -31,17 +31,17 @@ public class Driver extends Command{
 	    Robot.myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
         RobotMap.cow.set(RobotMap.gunnerStick.getY());
      
-    	   /*if(RobotMap.gStickUp.get()){
+    	   if(RobotMap.getUp() == true){
     		   RobotMap.upMotor.set(1);
     		   Robot.movingUp = true;
     	   }
-    	   else if(RobotMap.gRobotUp.get()){
+    	   else if(RobotMap.getUp() == true){
     		   RobotMap.upMotor.set(-1);
     		   Robot.movingUp = true;
     	   }
     	   else if(RobotMap.upMotor.get() != 0){
     		   RobotMap.upMotor.set(0);
-    		   }	*/	
+    		   }
 	}
 	
 	// Make this return true when this Command no longer needs to run execute()
