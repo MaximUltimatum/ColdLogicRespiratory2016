@@ -16,12 +16,14 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Driver extends Command{
 	
+	
 	public Driver(){
 		// Use requires() here to declare subsystem dependencies
 	}
 	
 	// Called just before this Command runs the first time
 	protected void initialize(){
+		   	
 	}
 	
 	// Called repeatedly when this Command is scheduled to run
@@ -29,7 +31,7 @@ public class Driver extends Command{
 	    Robot.myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
         RobotMap.cow.set(RobotMap.gunnerStick.getY());
      
-    	   if(RobotMap.gStickUp.get()){
+    	   /*if(RobotMap.gStickUp.get()){
     		   RobotMap.upMotor.set(1);
     		   Robot.movingUp = true;
     	   }
@@ -39,7 +41,7 @@ public class Driver extends Command{
     	   }
     	   else if(RobotMap.upMotor.get() != 0){
     		   RobotMap.upMotor.set(0);
-    		   }		
+    		   }	*/	
 	}
 	
 	// Make this return true when this Command no longer needs to run execute()
@@ -58,4 +60,5 @@ public class Driver extends Command{
 	protected void interrupted(){
 		end();
 	}
-}
+
+	}

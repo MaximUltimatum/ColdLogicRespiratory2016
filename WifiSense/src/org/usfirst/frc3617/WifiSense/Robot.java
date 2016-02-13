@@ -3,6 +3,7 @@ package org.usfirst.frc3617.WifiSense;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc3617.WifiSense.commands.Driver;
@@ -43,13 +44,14 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousInit() {
     	autoLoopCounter = 0;
+    	AutonomousCommand.start();
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	AutonomousCommand.start();
+		Scheduler.getInstance().run();
     }
     /*
 	*/
@@ -66,7 +68,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-       }
+    	Scheduler.getInstance().run();
+    }
     
     
     /**

@@ -35,16 +35,16 @@ public class RobotMap {
 
     public static Joystick driveStick;
 	public static Joystick gunnerStick;
-	static int frontRightMotor = 2,
-			frontLeftMotor = 3,
-			rearLeftMotor = 1,
-			rearRightMotor = 0,
-			cowMotor = 4,
-			towerRepell = 5, //temporary code for tower climb
-			towerClimber = 6,
-			//end temp code
-			upStickButton = 3,
-			upRobotButton = 4;
+	public static int frontRightMotor = 2;
+	public static int frontLeftMotor = 3;
+	public static int rearLeftMotor = 1;
+	public static int rearRightMotor = 0;
+	public static int cowMotor = 4;
+	public static int towerRepell = 5;
+	public static int towerClimber = 6;
+	public static int //end temp code
+	upStickButton = 3;
+	public static int upRobotButton = 4;
 
 	
 	public static Spark cow = new Spark(cowMotor);
