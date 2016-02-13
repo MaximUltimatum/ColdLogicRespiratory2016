@@ -61,20 +61,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
-        RobotMap.cow.set(RobotMap.gunnerStick.getY());
-     
-    	   if(RobotMap.gStickUp.get()){
-    		   RobotMap.upMotor.set(1);
-    		   movingUp = true;
-    	   }
-    	   else if(RobotMap.gRobotUp.get()){
-    		   RobotMap.upMotor.set(-1);
-    		   movingUp = true;
-    	   }
-    	   else if(RobotMap.upMotor.get() != 0){
-    		   RobotMap.upMotor.set(0);
-    		   }
        }
     
     

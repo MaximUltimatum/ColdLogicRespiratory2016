@@ -47,7 +47,7 @@ public class RobotMap {
 			upRobotButton = 4;
 
 	
-	static Spark cow = new Spark(cowMotor);
+	public static Spark cow = new Spark(cowMotor);
 	static Spark upMotor = new Spark(towerClimber);
 	static JoystickButton gStickUp = new JoystickButton(gunnerStick, upStickButton);
 	static JoystickButton gRobotUp = new JoystickButton(gunnerStick, upRobotButton);
