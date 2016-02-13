@@ -15,10 +15,10 @@ import org.usfirst.frc3617.WifiSense.RobotMap;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	RobotDrive myRobot;
-	int autoLoopCounter;
+	public static RobotDrive myRobot;
+	public static int autoLoopCounter;
 	boolean movingUp;
-    int autoMode = 1;
+    public static int autoMode = 1;
     //moved from RobotMap
 	
 	
@@ -46,75 +46,9 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	//start mode 1
-    	if(autoMode == 1){
-    	if(autoLoopCounter < 200) //Check if we've completed 200 loops (approximately 4 seconds)
-		{
-			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-			autoLoopCounter++;
-			} else {
-			myRobot.drive(0.0, 0.0); 	// stop robot
-		  }
-    	}
-    	//end mode 1
-    	//start mode 2
-    	if(autoMode == 2){
-        	if(autoLoopCounter < 150) //Check if we've completed 150 loops (approximately 3 seconds)
-    		{
-    			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    			autoLoopCounter++;
-    			} else {
-    			  if (autoLoopCounter < 300 && autoLoopCounter > 150){
-
-        			myRobot.drive(0.5, 0.0); 	// drive backwards half speed
-        			autoLoopCounter++;	
-    			  }
-    			  else{
-    			  myRobot.drive(0.0, 0.0);
-    			  }	// stop robot
-    		   }
-        	}
-    	//end mode 2
-    	//start mode 3
-    	if(autoMode == 3){
-    	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
-		{
-			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-			autoLoopCounter++;
-			}else if(autoLoopCounter > 100 && autoLoopCounter < 150){
-				RobotMap.cow.set(0.5);
-				autoLoopCounter++;
-			}
-			else if(autoLoopCounter > 150 && autoLoopCounter < 200){
-				myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-				RobotMap.cow.set(0);
-				autoLoopCounter++;
-			}
-			else {
-			myRobot.drive(0.0, 0.0); 	// stop robot
-		  }
-    	}
-    	//end mode 3
-    	//start mode 4
-    	if(autoMode == 4){
-    	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
-		{
-			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-			autoLoopCounter++;
-			}else if(autoLoopCounter > 100 && autoLoopCounter < 150){
-				myRobot.drive(-0.5, 1.0);
-				autoLoopCounter++;
-			}
-			else if(autoLoopCounter > 150 && autoLoopCounter < 200){
-				myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-				autoLoopCounter++;
-			}
-			else {
-			myRobot.drive(0.0, 0.0); 	// stop robot
-		  }
-    	}
-    	//end mode 4
     }
+    /*
+	*/
     
     /**
      * This function is called once each time the robot enters tele-operated mode

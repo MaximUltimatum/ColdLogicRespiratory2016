@@ -38,10 +38,79 @@ public class AutonomousCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+       	//start mode 1
+    	if(Robot.autoMode == 1){
+    	if(Robot.autoLoopCounter < 200) //Check if we've completed 200 loops (approximately 4 seconds)
+    	{
+    		Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    		Robot.autoLoopCounter++;
+    		} else {
+    		Robot.myRobot.drive(0.0, 0.0); 	// stop robot
+    	  }
+    	}
+    	//end mode 1
+    	//start mode 2
+    	if(Robot.autoMode == 2){
+        	if(Robot.autoLoopCounter < 150) //Check if we've completed 150 loops (approximately 3 seconds)
+    		{
+    			Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    			Robot.autoLoopCounter++;
+    			} else {
+    			  if (Robot.autoLoopCounter < 300 && Robot.autoLoopCounter > 150){
+
+        			Robot.myRobot.drive(0.5, 0.0); 	// drive backwards half speed
+        			Robot.autoLoopCounter++;	
+    			  }
+    			  else{
+    			  Robot.myRobot.drive(0.0, 0.0);
+    			  }	// stop robot
+    		   }
+        	}
+    	//end mode 2
+    	//start mode 3
+    	if(Robot.autoMode == 3){
+    	if(Robot.autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
+    	{
+    		Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    		Robot.autoLoopCounter++;
+    		}else if(Robot.autoLoopCounter > 100 && Robot.autoLoopCounter < 150){
+    			RobotMap.cow.set(0.5);
+    			Robot.autoLoopCounter++;
+    		}
+    		else if(Robot.autoLoopCounter > 150 && Robot.autoLoopCounter < 200){
+    			Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    			RobotMap.cow.set(0);
+    			Robot.autoLoopCounter++;
+    		}
+    		else {
+    		Robot.myRobot.drive(0.0, 0.0); 	// stop robot
+    	  }
+    	}
+    	//end mode 3
+    	//start mode 4
+    	if(Robot.autoMode == 4){
+    	if(Robot.autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
+    	{
+    		Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    		Robot.autoLoopCounter++;
+    		}else if(Robot.autoLoopCounter > 100 && Robot.autoLoopCounter < 150){
+    			Robot.myRobot.drive(-0.5, 1.0);
+    			Robot.autoLoopCounter++;
+    		}
+    		else if(Robot.autoLoopCounter > 150 && Robot.autoLoopCounter < 200){
+    			Robot.myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    			Robot.autoLoopCounter++;
+    		}
+    		else {
+    		Robot.myRobot.drive(0.0, 0.0); 	// stop robot
+    	  }
+    	}
+    	//end mode 4
     }
 
     // Make this return true when this Command no longer needs to run execute()
