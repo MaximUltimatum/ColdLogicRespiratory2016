@@ -12,6 +12,7 @@
 package org.usfirst.frc3617.WifiSense.commands;
 
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc3617.WifiSense.Robot;
@@ -78,41 +79,27 @@ public class AutonomousCommand extends Command {
     	//end mode 2
     	//start mode 3
     	if(Robot.autoMode == 3){
-    	if(Robot.autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
-    	{
     		myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    		Robot.autoLoopCounter++;
-    		}else if(Robot.autoLoopCounter > 100 && Robot.autoLoopCounter < 150){
-    			RobotMap.cow.set(0.5);
-    			Robot.autoLoopCounter++;
-    		}
-    		else if(Robot.autoLoopCounter > 150 && Robot.autoLoopCounter < 200){
+    		Timer.delay(2);
+    					RobotMap.cow.set(0.5);
     			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
     			RobotMap.cow.set(0);
-    			Robot.autoLoopCounter++;
-    		}
-    		else {
+    		
     		myRobot.drive(0.0, 0.0); 	// stop robot
-    	  }
+    	  
     	}
     	//end mode 3
     	//start mode 4
     	if(Robot.autoMode == 4){
-    	if(Robot.autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
-    	{
+    	
     		myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    		Robot.autoLoopCounter++;
-    		}else if(Robot.autoLoopCounter > 100 && Robot.autoLoopCounter < 150){
+            Timer.delay(2);
     			myRobot.drive(-0.5, 1.0);
-    			Robot.autoLoopCounter++;
-    		}
-    		else if(Robot.autoLoopCounter > 150 && Robot.autoLoopCounter < 200){
+    		Timer.delay(2);
     			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    			Robot.autoLoopCounter++;
-    		}
-    		else {
+    		Timer.delay(2);   		
     		myRobot.drive(0.0, 0.0); 	// stop robot
-    	  }
+    	
     	}
     	//end mode 4
     }

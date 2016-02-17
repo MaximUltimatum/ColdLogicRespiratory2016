@@ -8,6 +8,7 @@ package org.usfirst.frc3617.WifiSense.commands;
 import org.usfirst.frc3617.WifiSense.Robot;
 import org.usfirst.frc3617.WifiSense.RobotMap;
 
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -15,33 +16,38 @@ import edu.wpi.first.wpilibj.command.Command;
  * @author Thayer
  */
 public class Driver extends Command{
+	JoystickButton gStickUp;
+	JoystickButton gRobotUp;
 	
 	
 	public Driver(){
+		gStickUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upStickButton);
+		gRobotUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upRobotButton);
 		// Use requires() here to declare subsystem dependencies
 	}
 	
 	// Called just before this Command runs the first time
 	protected void initialize(){
+
 		   	
 	}
 	
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute(){
 	    Robot.myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
-        RobotMap.cow.set(RobotMap.gunnerStick.getY());
+        RobotMap.cow.set(RobotMap.gunnerStick.getY() / 3);
      
-    	   if(RobotMap.getUp() == true){
+    	  /* if(gStickUp.get() == true){
     		   RobotMap.upMotor.set(1);
     		   Robot.movingUp = true;
     	   }
-    	   else if(RobotMap.getUp() == true){
+    	   else if(gRobotUp.get() == true){
     		   RobotMap.upMotor.set(-1);
     		   Robot.movingUp = true;
     	   }
     	   else if(RobotMap.upMotor.get() != 0){
     		   RobotMap.upMotor.set(0);
-    		   }
+    		   }*/
 	}
 	
 	// Make this return true when this Command no longer needs to run execute()
