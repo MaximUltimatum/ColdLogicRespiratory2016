@@ -45,7 +45,7 @@ public class Driver extends Command{
     		   RobotMap.upMotor.set(-1);
     		   Robot.movingUp = true;
     	   }
-    	   else if(RobotMap.upMotor.get() != 0){
+    	   else{
     		   RobotMap.upMotor.set(0);
     		   }*/
 	}
