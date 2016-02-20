@@ -19,7 +19,6 @@ import org.usfirst.frc3617.WifiSense.commands.AutonomousCommand;
  */
 public class Robot extends IterativeRobot {
 	public static RobotDrive myRobot;
-	public static int autoLoopCounter;
     public static int autoMode = 1;
     //moved from RobotMap
 	
@@ -42,7 +41,6 @@ public class Robot extends IterativeRobot {
      * This function is run once each time the robot enters autonomous mode
      */
     public void autonomousInit() {
-    	autoLoopCounter = 0;
     	AutonomousCommand.start();
     }
 
