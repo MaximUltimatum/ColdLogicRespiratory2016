@@ -50,32 +50,22 @@ public class AutonomousCommand extends Command {
     protected void execute() {
        	//start mode 1
     	if(Robot.autoMode == 1){
-    	if(Robot.autoLoopCounter < 200) //Check if we've completed 200 loops (approximately 4 seconds)
-    	{
     		myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    		Robot.autoLoopCounter++;
-    		} else {
+    		Timer.delay(4);
     		myRobot.drive(0.0, 0.0); 	// stop robot
-    	  }
     	}
     	//end mode 1
     	//start mode 2
     	if(Robot.autoMode == 2){
-        	if(Robot.autoLoopCounter < 150) //Check if we've completed 150 loops (approximately 3 seconds)
-    		{
-    			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    			Robot.autoLoopCounter++;
-    			} else {
-    			  if (Robot.autoLoopCounter < 300 && Robot.autoLoopCounter > 150){
-
-        			myRobot.drive(0.5, 0.0); 	// drive backwards half speed
-        			Robot.autoLoopCounter++;	
-    			  }
-    			  else{
+        	
+    			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed		 
+                   Timer.delay(3);
+        			myRobot.drive(0.5, 0.0); 	// drive backwards half speed	
+    			  Timer.delay(2);
     			  myRobot.drive(0.0, 0.0);
-    			  }	// stop robot
-    		   }
-        	}
+    	}	// stop robot
+    		  
+        	
     	//end mode 2
     	//start mode 3
     	if(Robot.autoMode == 3){
