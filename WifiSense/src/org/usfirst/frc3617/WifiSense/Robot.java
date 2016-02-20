@@ -20,7 +20,6 @@ import org.usfirst.frc3617.WifiSense.commands.AutonomousCommand;
 public class Robot extends IterativeRobot {
 	public static RobotDrive myRobot;
 	public static int autoLoopCounter;
-	public static boolean movingUp;
     public static int autoMode = 1;
     //moved from RobotMap
 	
@@ -60,7 +59,6 @@ public class Robot extends IterativeRobot {
      * This function is called once each time the robot enters tele-operated mode
      */
     public void teleopInit(){
-    	movingUp = false;
     	Driver.start();
     }
 

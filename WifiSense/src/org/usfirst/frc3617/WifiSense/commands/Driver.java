@@ -39,14 +39,15 @@ public class Driver extends Command{
      
     	   if(gStickUp.get() == true){
     		   RobotMap.upMotor.set(1);
-    		   Robot.movingUp = true;
+    		   RobotMap.pullUp.set(-1);
     	   }
     	   else if(gRobotUp.get() == true){
     		   RobotMap.upMotor.set(-1);
-    		   Robot.movingUp = true;
+    		   RobotMap.pullUp.set(0.66);
     	   }
     	   else{
     		   RobotMap.upMotor.set(0);
+    		   RobotMap.pullUp.set(0);
     		   }
 	}
 	
@@ -59,6 +60,8 @@ public class Driver extends Command{
 	protected void end(){
 		Robot.myRobot.arcadeDrive(0,0);
         RobotMap.cow.set(0);
+        RobotMap.upMotor.set(0);
+	    RobotMap.pullUp.set(0);
 	}
 	
 	// Called when another command which requires one or more of the same
