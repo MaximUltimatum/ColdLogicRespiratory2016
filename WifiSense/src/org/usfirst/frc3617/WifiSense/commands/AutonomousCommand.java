@@ -71,10 +71,11 @@ public class AutonomousCommand extends Command {
     	if(Robot.autoMode == 3){
     		myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
     		Timer.delay(2);
-    					RobotMap.cow.set(0.5);
-    			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
+    		RobotMap.cow.set(0.5);
+    		Timer.delay(2);
+    		myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
     			RobotMap.cow.set(0);
-    		
+    		Timer.delay(2);
     		myRobot.drive(0.0, 0.0); 	// stop robot
     	  
     	}
