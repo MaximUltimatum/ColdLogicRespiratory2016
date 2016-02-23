@@ -27,8 +27,8 @@ public class Driver extends Command{
 	
 	// Called just before this Command runs the first time
 	protected void initialize(){
-		gStickUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upStickButton);
-		gRobotUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upRobotButton);
+      gStickUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upStickButton);
+	  gRobotUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upRobotButton);
 		   	
 	}
 	
@@ -38,8 +38,8 @@ public class Driver extends Command{
         RobotMap.cow.set(RobotMap.gunnerStick.getY() / 3);
      
     	   if(gStickUp.get() == true){
-    		   RobotMap.upMotor.set(0.8);
-    		   RobotMap.pullUp.set(-  1);
+    		   RobotMap.upMotor.set(0.6);
+    		   RobotMap.pullUp.set(-1);
     	   }
     	   else if(gRobotUp.get() == true){
     		   RobotMap.upMotor.set(-0.8);
@@ -58,8 +58,8 @@ public class Driver extends Command{
 	
 	// Called once after isFinished returns true
 	protected void end(){
-		Robot.myRobot.arcadeDrive(0,0);
-        RobotMap.cow.set(0);
+	Robot.myRobot.arcadeDrive(0,0);
+     RobotMap.cow.set(0);
         RobotMap.upMotor.set(0);
 	    RobotMap.pullUp.set(0);
 	}
@@ -67,7 +67,7 @@ public class Driver extends Command{
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted(){
-		end();
+		//end();
 	}
 
 	}

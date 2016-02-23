@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 
-    	RobotMap.driveStick = new Joystick(0);
+   RobotMap.driveStick = new Joystick(0);
     	RobotMap.gunnerStick = new Joystick(1);
     	myRobot = new RobotDrive(RobotMap.frontLeftMotor,RobotMap.rearLeftMotor,RobotMap.frontRightMotor,RobotMap.rearRightMotor);
     }
