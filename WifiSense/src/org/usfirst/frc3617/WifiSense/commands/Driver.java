@@ -38,12 +38,12 @@ public class Driver extends Command{
         RobotMap.cow.set(RobotMap.gunnerStick.getY() / 3);
      
     	   if(gStickUp.get() == true){
-    		   RobotMap.upMotor.set(0.5);
-    		   RobotMap.pullUp.set(-1);
+    		   RobotMap.upMotor.set(0.3);
+    		   RobotMap.pullUp.set(-0.8);
     	   }
     	   else if(gRobotUp.get() == true){
-    		   RobotMap.upMotor.set(-0.8);
-    		   RobotMap.pullUp.set(0.3);
+    		   RobotMap.upMotor.set(-0.6);
+    		   RobotMap.pullUp.set(0.1);
     	   }
     	   else{
     		   RobotMap.upMotor.set(0);
