@@ -29,7 +29,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-
+    	
    RobotMap.driveStick = new Joystick(0);
     	RobotMap.gunnerStick = new Joystick(1);
     	myRobot = new RobotDrive(RobotMap.frontLeftMotor,RobotMap.rearLeftMotor,RobotMap.frontRightMotor,RobotMap.rearRightMotor);
@@ -41,6 +41,7 @@ public class Robot extends IterativeRobot {
      * This function is run once each time the robot enters autonomous mode
      */
     public void autonomousInit() {
+        myRobot.setSafetyEnabled(false);
     	AutonomousCommand.start();
     }
 
@@ -57,6 +58,7 @@ public class Robot extends IterativeRobot {
      * This function is called once each time the robot enters tele-operated mode
      */
     public void teleopInit(){
+    	myRobot.setSafetyEnabled(true);
     	Driver.start();
     }
 
