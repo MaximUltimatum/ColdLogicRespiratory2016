@@ -35,7 +35,7 @@ public class Driver extends Command{
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute(){
 	    Robot.myRobot.arcadeDrive(-RobotMap.driveStick.getY(), -RobotMap.driveStick.getX());
-        RobotMap.cow.set(RobotMap.gunnerStick.getY() / 3);
+        RobotMap.cow.set(RobotMap.gunnerStick.getY() / 2);
      
     	   if(gStickUp.get() == true){
     		   RobotMap.upMotor.set(0.3);
