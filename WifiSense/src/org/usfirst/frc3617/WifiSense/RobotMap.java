@@ -42,6 +42,7 @@ public class RobotMap {
 	public static int robotUpMotor = 6;
 	public static int upStickButton = 3;
 	public static int upRobotButton = 4;
+	public static int slowSuck = 7;
 
 	
 	public static Spark cow = new Spark(cowMotor);

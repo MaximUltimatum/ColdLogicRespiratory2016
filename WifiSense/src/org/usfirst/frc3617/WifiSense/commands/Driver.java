@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Driver extends Command{
 	JoystickButton gStickUp;
 	JoystickButton gRobotUp;
+	JoystickButton gSlowIn;
 	
 	
 	public Driver(){
@@ -29,6 +30,7 @@ public class Driver extends Command{
 	protected void initialize(){
       gStickUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upStickButton);
 	  gRobotUp = new JoystickButton(RobotMap.gunnerStick, RobotMap.upRobotButton);
+	  gSlowIn = new JoystickButton(RobotMap.gunnerStick, RobotMap.slowSuck);
 		   	
 	}
 	
@@ -38,12 +40,15 @@ public class Driver extends Command{
         RobotMap.cow.set(RobotMap.gunnerStick.getY() / 2);
      
     	   if(gStickUp.get() == true){
-    		   RobotMap.upMotor.set(0.3);
-    		   RobotMap.pullUp.set(-0.8);
+    		   RobotMap.upMotor.set(0.8);
+    		   RobotMap.pullUp.set(-0.6);
     	   }
     	   else if(gRobotUp.get() == true){
-    		   RobotMap.upMotor.set(-0.6);
-    		   RobotMap.pullUp.set(0.1);
+    		   RobotMap.upMotor.set(-0.5);
+    		   RobotMap.pullUp.set(0.7);
+    	   }
+    	   else if(gSlowIn.get() == true){
+    		   RobotMap.upMotor.set(0.3);
     	   }
     	   else{
     		   RobotMap.upMotor.set(0);
