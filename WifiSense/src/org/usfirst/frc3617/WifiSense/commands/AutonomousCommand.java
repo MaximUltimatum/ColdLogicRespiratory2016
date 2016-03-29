@@ -60,8 +60,8 @@ else if(RobotMap.gunnerStick.getRawAxis(3) <= 0.5){
 	}
 //start mode 1
 if(Robot.autoMode == 1){
-	Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed
-	Timer.delay(3);
+	Robot.myRobot.drive(0.6, 0.0); 	// drive forwards half speed
+	Timer.delay(2.6);
 	Robot.myRobot.drive(0.0, 0.0); 	// stop robot
 }
 //end mode 1
@@ -69,9 +69,9 @@ if(Robot.autoMode == 1){
 if(Robot.autoMode == 2){
 	
 		Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed		 
-           Timer.delay(3);
+           Timer.delay(3.4);
 			Robot.myRobot.drive(-0.3, 0.0); 	// drive backwards half speed	
-		  Timer.delay(2);
+		  Timer.delay(2.8);
 		  Robot.myRobot.drive(0.0, 0.0);
 }	// stop robot
 	  
@@ -85,8 +85,7 @@ if(Robot.autoMode == 3){
 	RobotMap.cow.set(0);
 	Timer.delay(1.5);
 	Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed
-	RobotMap.cow.set(0.5);
-	Timer.delay(1.5);
+	Timer.delay(2);
 	Robot.myRobot.drive(0.0, 0.0); 	// stop robot
 	RobotMap.cow.set(0);
   
@@ -97,7 +96,7 @@ if(Robot.autoMode == 4){
 
 	Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed
     Timer.delay(2.2);
-    Robot.myRobot.drive(0.4, -1.0);
+    Robot.myRobot.drive(0.4, 1.0);
 	Timer.delay(0.65);
 	Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed
 	Timer.delay(3);   		
