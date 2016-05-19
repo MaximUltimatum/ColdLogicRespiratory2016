@@ -69,9 +69,9 @@ if(Robot.autoMode == 1){
 if(Robot.autoMode == 2){
 	
 		Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed		 
-           Timer.delay(3.4);
+           Timer.delay(3.8);
 			Robot.myRobot.drive(-0.3, 0.0); 	// drive backwards half speed	
-		  Timer.delay(2.8);
+		  Timer.delay(3.2);
 		  Robot.myRobot.drive(0.0, 0.0);
 }	// stop robot
 	  
@@ -85,7 +85,7 @@ if(Robot.autoMode == 3){
 	RobotMap.cow.set(0);
 	Timer.delay(1.5);
 	Robot.myRobot.drive(0.3, 0.0); 	// drive forwards half speed
-	Timer.delay(2);
+	Timer.delay(3);
 	Robot.myRobot.drive(0.0, 0.0); 	// stop robot
 	RobotMap.cow.set(0);
   
